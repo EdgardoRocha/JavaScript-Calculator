@@ -1,42 +1,42 @@
-$(document).ready(function(){
-    
-    var hold1 = '';
-    var hold3 = '';
-    var equation = [];
+$(document).ready(function() {
+
+  var hold1 = '';
+  var hold3 = '';
+  var equation = [];
+  var num = $(this).val();
+  $('button').click(function() {
     var num = $(this).val();
-    $('button').click(function(){
-        var num = $(this).val();
-        equation.push(num);
-        for(var member in equation) {
-            hold1 += equation[member];
-        }
-        equation = [];
-        $('#show').text(hold1);
-    })
-    
-    $('.operator').click(function(){
-        var oper = $(this).val();
-        console.log(oper);
-        if (oper == '/') {
-            console.log('divide');
-        } else if (oper == '*') {
-          console.log('multiply');
-        } else if (oper == '-') {
-          console.log('subtract');
-        } else if (oper == '+') {
-          console.log('addition');
-        }
-    });
-    
-    $('.finish').click(function(){
-      console.log('finish');
-      
-    });
-  
-    function dataToInt(data) {
-      return parseInt(data);
+    equation.push(num);
+    for (var member in equation) {
+      hold1 += equation[member];
     }
-  
+    equation = [];
+    $('#show').text(hold1);
+  })
+
+  $('.operator').click(function() {
+    var oper = $(this).val();
+    console.log(oper);
+    if (oper == '/') {
+      console.log('divide');
+    } else if (oper == '*') {
+      console.log('multiply');
+    } else if (oper == '-') {
+      console.log('subtract');
+    } else if (oper == '+') {
+      console.log('addition');
+    }
+  });
+
+  $('.finish').click(function() {
+    console.log('finish');
+
+  });
+
+  function dataToInt(data) {
+    return parseInt(data);
+  }
+
 });
 
 /* work this one later
